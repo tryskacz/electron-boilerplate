@@ -30,7 +30,19 @@ document.querySelector("#app").style.display = "block";
        resizeWidth: false
      });
 
- document.getElementById('overlay').style.display = 'none';
+ 
 
+var cutTextareaBtn = document.getElementById('copy');
 
+cutTextareaBtn.addEventListener('click', function(event) {  
+  var cutTextarea = document.getElementById('outputText');  
+  cutTextarea.select();
 
+  try {  
+    var successful = document.execCommand('copy');  
+    var msg = successful ? 'successful' : 'unsuccessful';  
+    console.log('copy text command was ' + msg);  
+  } catch(err) {  
+    console.log('Oops, unable to copy');  
+  }  
+});

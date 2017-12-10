@@ -11,6 +11,11 @@ $( '#commit' ).click(function() {
    $.LoadingOverlay("hide");
   }, 2000);
 });
+
+$( '#empty' ).click(function() {
+  document.getElementById('inputText').value = '';
+});
+
 function commit() {
   var inputText = document.getElementById('inputText').value;
   var inputLevel = $('input[name=optimization]:checked').val();

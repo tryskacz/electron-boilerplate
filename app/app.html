@@ -5,11 +5,12 @@
   <title>jsShorter 0.0.1</title>
 </head>
 <body>
-  <div id="overlay"> </div>
+
   <div id="app" class="container" style="display: none;">
     <div class="panel-container">
       <div class="panel-left">
-        <h1 class="logo">INPUT</h1>
+        <div class="header">INPUT</div>
+
         <textarea class="input-textarea" id="inputText"></textarea>
         <div class="lv-radiobuttonbox">
           <input id="whitespace" type="radio" name="optimization" value="WHITESPACE" class="lv-" checked>
@@ -20,14 +21,17 @@
           <label for="advanced" data-content="ADVANCED">ADVANCED</label>
         </div>
         <div class="btns">
-          <button class="btn red">EMPTY</button>
+          <button class="btn red" id="empty">EMPTY</button>
           <button class="btn right" id="commit">COMPRESS</button>
         </div>
       </div>
       <div class="splitter">
       </div>
       <div class="panel-right">
-        <h1 class="logo">RESULT</h1>
+        <div class="header inline">RESULT</div>
+        <button class="btn right small" data-clipboard-target="#outputText" id="copy">
+    COPY
+</button>
         <textarea class="result-textarea" id="outputText"></textarea>
       </div>
     </div>
