@@ -1,12 +1,12 @@
 {
-  "name": "electron-boilerplate",
-  "productName": "Electron Boilerplate",
-  "description": "Starter for your Electron application",
-  "version": "0.0.0",
+  "name": "jsShorter",
+  "productName": "jsShorter",
+  "description": "App for simplify Javascript code via Closure Compiler",
+  "version": "0.0.1",
   "private": true,
-  "author": "Mr. Gumby <mr.gumby@example.com>",
-  "copyright": "© 2017, Gumby inc.",
-  "homepage": "http://example.com",
+  "author": "Lamavile",
+  "copyright": "© 2017, Lamavile",
+  "homepage": "http://lamavile.cz",
   "main": "app/background.js",
   "build": {
     "appId": "com.example.electron-boilerplate",
@@ -28,10 +28,15 @@
     "e2e": "mocha temp/e2e.js --require source-map-support/register",
     "test": "npm run unit && npm run e2e",
     "start": "node build/start.js",
-    "release": "npm test && webpack --config=build/webpack.app.config.js --env=production && electron-builder"
+    "release": "webpack --config=build/webpack.app.config.js --env=production && electron-builder"
   },
   "dependencies": {
-    "fs-jetpack": "^1.0.0"
+    "fs-jetpack": "^1.0.0",
+    "gasparesganga-jquery-loading-overlay": "^1.5.4",
+    "google-closure-compiler-js": "^20171203.0.0",
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "jquery-ui-css": "^1.11.5"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.5",

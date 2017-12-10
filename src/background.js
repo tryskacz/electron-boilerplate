@@ -18,8 +18,9 @@ const setApplicationMenu = () => {
   const menus = [editMenuTemplate];
   if (env.name !== "production") {
     menus.push(devMenuTemplate);
+    Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
   }
-  Menu.setApplicationMenu(Menu.buildFromTemplate(menus));
+
 };
 
 // Save userData in separate folders for each environment.
@@ -34,8 +35,10 @@ app.on("ready", () => {
   setApplicationMenu();
 
   const mainWindow = createWindow("main", {
-    width: 1000,
-    height: 600
+    minWidth: 640,
+    minHeight: 480,
+    width: 640,
+    height: 480
   });
 
   mainWindow.loadURL(

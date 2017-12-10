@@ -1,7 +1,7 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
-
+const webpack = require('webpack');
 module.exports = env => {
   return {
     target: "node",
@@ -30,7 +30,8 @@ module.exports = env => {
       ]
     },
     plugins: [
-      new FriendlyErrorsWebpackPlugin({ clearConsole: env === "development" })
+      new FriendlyErrorsWebpackPlugin({ clearConsole: env === "development" }),
+      new webpack.ProvidePlugin({'$': 'jquery', 'jQuery': 'jquery', 'windows.jQuery': 'jquery' }),
     ]
   };
 };
